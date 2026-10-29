@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desirable Growth Takes Time — Repositioned.business</title>
+<meta name="description" content="Everyone wants growth, but few budget the hours to think it through and carry it out. Here's what happens when the time never comes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0C2340;
+    --navy-deep: #081832;
+    --amber: #C07C15;
+    --amber-dark: #96600F;
+    --cream: #FAF8F5;
+    --white: #FFFFFF;
+    --ink: #1A1F2B;
+    --ink-soft: #4A5164;
+    --border-soft: #E4E1DA;
+    --radius: 6px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+
+  h1, h2, h3, .wordmark {
+    font-family: 'Marcellus', serif;
+    font-weight: 400;
+    color: var(--navy);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  header {
+    padding: 28px 0;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo svg { flex-shrink: 0; }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-text .name {
+    font-family: 'Marcellus', serif;
+    font-size: 21px;
+    color: var(--navy);
+  }
+
+  .logo-text .tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--amber-dark);
+    margin-top: 2px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  nav a { transition: color 0.15s ease; white-space: nowrap; }
+  nav a:hover { color: var(--navy); }
+
+  @media (max-width: 860px) {
+    nav { display: none; }
+  }
+
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 14px;
+  }
+
+  .nav-dropdown > .nav-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    color: var(--ink-soft);
+    padding: 0;
+    transition: color 0.15s ease;
+  }
+
+  .nav-dropdown > .nav-trigger:hover { color: var(--navy); }
+
+  .nav-dropdown .caret {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -3px;
+    transition: transform 0.15s ease;
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 14px;
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(12, 35, 64, 0.08);
+    padding: 8px;
+    min-width: 160px;
+    display: none;
+    flex-direction: column;
+    z-index: 20;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
+
+  .nav-dropdown:hover .caret,
+  .nav-dropdown:focus-within .caret {
+    transform: rotate(225deg);
+    margin-top: 3px;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 9px 12px;
+    border-radius: 4px;
+    color: var(--ink);
+    font-size: 14px;
+  }
+
+  .nav-dropdown-menu a:hover {
+    background: var(--cream);
+    color: var(--navy);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 88px;
+    text-align: center;
+  }
+
+  .hero .eyebrow,
+  .page-hero .eyebrow {
+    font-size: 14px;
+    color: var(--amber-dark);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 4.2vw, 42px);
+    line-height: 1.4;
+    max-width: 600px;
+    margin: 0 auto 22px;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .hero h1 span:last-child {
+    color: var(--amber-dark);
+  }
+
+  .hero .sub {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 0 auto 34px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 13px 30px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: var(--amber-dark);
+  }
+
+  /* Problem section */
+  .problem {
+    background: var(--white);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 72px 0;
+  }
+
+  .problem .wrap {
+    max-width: 1080px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  @media (max-width: 800px) {
+    .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .problem-text h2 {
+    font-size: 30px;
+    line-height: 1.35;
+    margin-bottom: 24px;
+  }
+
+  .problem-text p {
+    font-size: 19px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .problem-text p:last-child {
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .problem-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .gold-link {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--amber-dark);
+  }
+
+  .video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--navy);
+  }
+
+  .video-frame video,
+  .video-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-play {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-play::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 14px solid var(--amber);
+    margin-left: 4px;
+  }
+
+  /* About / four areas */
+  .about {
+    padding: 88px 0 64px;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  @media (max-width: 800px) {
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .about h2 {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+
+  .about p {
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .growth-engine-heading {
+    font-size: 27px;
+    margin-bottom: 18px;
+  }
+
+  .areas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .area-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .area-row:first-child { padding-top: 0; }
+  .area-row:last-child { border-bottom: none; }
+
+  .area-ring {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid var(--navy);
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Marcellus', serif;
+    font-size: 15px;
+    color: var(--white);
+  }
+
+  .area-row:last-child .area-ring {
+    border-color: var(--amber);
+    background: var(--amber);
+    color: var(--white);
+  }
+
+  .area-content h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .area-content p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+
+  /* Paths */
+  .paths {
+    padding: 64px 0 96px;
+  }
+
+  .paths-head {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+  }
+
+  .paths-head h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+  }
+
+  .paths-head p {
+    color: var(--ink-soft);
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 860px) {
+    .path-grid { grid-template-columns: 1fr; }
+  }
+
+  .path-card {
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .path-card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .path-card p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .path-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--amber-dark);
+  }
+
+  /* Credibility strip */
+  .credibility {
+    background: var(--navy);
+    color: var(--white);
+    padding: 56px 0;
+  }
+
+  .testimonials {
+    background: var(--navy);
+    color: var(--white);
+    padding: 64px 0;
+  }
+
+  .testimonials-head {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-head h2 {
+    color: var(--white);
+    font-size: 24px;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  @media (max-width: 860px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
+  }
+
+  .testimonial-card {
+    background: var(--navy-deep);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+
+  .testimonial-card .quote {
+    font-family: 'Marcellus', serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card .attribution {
+    font-size: 14px;
+    color: var(--amber);
+  }
+
+  .testimonial-card .attribution span {
+    display: block;
+    color: #C7D0DE;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  /* Closing CTA */
+  .closing {
+    padding: 96px 0;
+    text-align: center;
+  }
+
+  .closing h2 {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .closing p {
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin: 0 auto 32px;
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border-soft);
+    padding: 32px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 600px) {
+    .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }  /* Sub-page long-form content (mentoring, etc.) */
+  .page-hero {
+    padding: 72px 0 24px;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 4.2vw, 40px);
+    max-width: 640px;
+    margin: 0 auto 22px;
+    line-height: 1.3;
+  }
+
+  .page-hero-sub {
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .page-content {
+    padding: 24px 0 80px;
+  }
+
+  .page-content .wrap {
+    max-width: 700px;
+  }
+
+  .page-content p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+
+  .page-content p.closing-line {
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 28px;
+  }
+
+  .page-cta-wrap {
+    text-align: center;
+  }
+
+  .qualify-block {
+    margin: 48px 0;
+    padding: 40px 0;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .qualify-block h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .qualify-list {
+    margin: 32px 0;
+  }
+
+  .qualify-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .qualify-row:first-child { padding-top: 0; }
+  .qualify-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .qualify-num {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Marcellus', serif;
+    font-size: 15px;
+  }
+
+  .qualify-row:last-child .qualify-num {
+    background: var(--amber);
+  }
+
+  .qualify-content h4 {
+    font-family: 'Marcellus', serif;
+    font-weight: 400;
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .qualify-content p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+  .newsletter-block {
+    max-width: 480px;
+    margin: 40px auto 0;
+    text-align: center;
+  }
+
+  .newsletter-masthead {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .newsletter-masthead-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+  }
+
+  .newsletter-masthead-name {
+    font-family: 'Marcellus', serif;
+    font-size: 18px;
+    color: var(--navy);
+  }
+
+  .newsletter-masthead-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--amber-dark);
+    margin-top: 2px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .newsletter-form input[type="email"] {
+    flex: 1;
+    min-width: 220px;
+    padding: 13px 16px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--amber);
+  }
+
+  .newsletter-form button {
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+  }
+
+  .newsletter-proof {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 16px;
+  }
+
+  .newsletter-desc {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+
+  .post-card {
+    display: block;
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 48px;
+    border-top: 1px solid var(--border-soft);
+    color: inherit;
+  }
+
+  .post-card-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .post-card-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .post-card-excerpt {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  /* Blog hero — distinct dark editorial band, using the site's existing palette */
+  .blog-hero {
+    background-color: var(--navy);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    padding: 96px 0 84px;
+    text-align: left;
+  }
+
+  .blog-hero .wrap {
+    max-width: 760px;
+  }
+
+  .blog-eyebrow {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 22px;
+  }
+
+  .blog-hero h1 {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.25;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .blog-hero h1 .accent {
+    font-style: italic;
+    color: #9FADC7;
+  }
+
+  .blog-hero-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    color: #C7D0DE;
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 1.5px solid var(--amber);
+    border-radius: var(--radius);
+    color: var(--amber);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .btn-outline:hover {
+    background: rgba(192, 124, 21, 0.12);
+  }
+
+
+  /* Blog post additions */
+  .post-figure { padding: 8px 0 24px; }
+  .post-figure .wrap { max-width: 900px; }
+  .post-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+  .page-content ul { margin: 0 0 28px 0; padding-left: 22px; }
+  .page-content li { font-size: 18px; color: var(--ink-soft); margin-bottom: 14px; padding-left: 4px; }
+  .page-content li::marker { color: var(--amber); }
+  .page-content li strong { color: var(--navy); font-weight: 600; }
+  .page-content p strong { color: var(--navy); font-weight: 600; }
+  .post-back { text-align: center; margin: 56px 0 0; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo" aria-label="Repositioned.business home">
+      <svg width="34" height="34" viewBox="0 0 200 200" role="img" aria-hidden="true">
+        <circle cx="100" cy="100" r="20" fill="none" stroke="#0C2340" stroke-width="9"/>
+        <circle cx="100" cy="100" r="40" fill="none" stroke="#0C2340" stroke-width="9"/>
+        <circle cx="100" cy="100" r="60" fill="none" stroke="#0C2340" stroke-width="9"/>
+        <circle cx="100" cy="100" r="82" fill="none" stroke="#C07C15" stroke-width="9"/>
+      </svg>
+      <span class="logo-text">
+        <span class="name">repositioned</span>
+        <span class="tag">BUSINESS</span>
+      </span>
+    </a>
+    <nav>
+      <div class="nav-dropdown" tabindex="0">
+        <button class="nav-trigger" aria-haspopup="true" aria-expanded="false">
+          Who we work with
+          <span class="caret" aria-hidden="true"></span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="accountants.html">Accountants</a>
+          <a href="cfo.html">CFO</a>
+          <a href="lawyers.html">Lawyers</a>
+          <a href="https://chosenbyfamilies.com">Dentists</a>
+        </div>
+      </div>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About us</a>
+      <a href="index.html#contact">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">Blog</p>
+      <h1>Desirable Growth Takes Time</h1>
+    </div>
+  </section>
+
+  <section class="post-figure">
+    <div class="wrap">
+      <img src="desirable-growth-takes-time.png" alt="A cross-section of a tree trunk showing its growth rings, beside the words 'Rings form slowly, then last'" width="1600" height="814">
+    </div>
+  </section>
+
+  <article class="page-content">
+    <div class="wrap">
+
+      <p>Most owners covet growth in the form of more revenue and market share. They openly speak about its importance and daydream about the results. Many have already committed the income; some have already spent it. But one issue remains unresolved: the time needed to think through the growth and, notably, the hours needed to implement it.</p>
+
+      <p>Time is the most under-budgeted resource in any growth plan. Owners will build a forecast down to the last percentage point, yet never ask where the hours will come from. Growth is treated as an outcome to be wished for rather than a project to be resourced.</p>
+
+      <p>Consider what growth actually asks of you. First, you must think. You need to decide who you want to serve, what you want to be known for, and which opportunities deserve a yes and which a polite no. That thinking cannot be squeezed between client calls or done on a Friday afternoon when energy is spent. It needs unhurried, uninterrupted attention.</p>
+
+      <p>Then you must implement. New offers need building, teams need briefing, systems need adjusting, and the market needs to hear about it. Each of these takes hours, and none of them is the same as the work that currently pays the bills. This is the trap. The business that funds your growth is also the business that consumes the time you would need to pursue it.</p>
+
+      <p>So what happens? The thinking gets postponed, and the implementation is rushed or half-finished. Six months later the revenue has not arrived, and the owner concludes that growth is difficult, when the real problem was that it was never given room to happen.</p>
+
+      <p><strong>And if the time never comes? The business stagnates.</strong> The owner spends each day firefighting: dealing with what is happening today, catching up on what should have happened yesterday, and leaving no room at all for tomorrow. Everyone is busy, so it feels like progress, but busyness only maintains the business you already have. Meanwhile the market moves, competitors reposition, and the gap between where you are and where you meant to be quietly widens. Staying still isn't safe. It is a slow decline that rarely announces itself until you realise growth was missed for another year.</p>
+
+      <p>There is also a timing problem. The income has been mentally spent, but the results lag behind the effort, often by a year or more. Good positioning compounds slowly. Referrers need to see you consistently before they trust you, and markets take time to change their view of who you are. Expecting the return before the investment of time has been made is how owners end up frustrated, or worse, change direction just before it starts to work.</p>
+
+      <p>The answer is not to work longer hours. It is to treat time as a real constraint and plan around it:</p>
+
+      <ul>
+        <li><strong>Protect thinking time</strong> in the diary before it is needed.</li>
+        <li><strong>Choose fewer growth initiatives</strong> and finish them properly.</li>
+        <li><strong>Release hours</strong> by delegating or stopping work that no longer earns its place.</li>
+        <li><strong>Build better processes</strong> to ensure the work is done consistently, so every task isn't reinvented each time and quality doesn't depend on your constant attention.</li>
+        <li><strong>Master AI</strong> to save time on everyday activities such as drafting, summarising, research and administration, freeing your best hours for the thinking and decisions only you can make.</li>
+        <li><strong>Set expectations</strong> that desirable growth is measured in quarters and years, not weeks.</li>
+      </ul>
+
+      <p class="closing-line">Growth that lasts is rarely rushed. A tree adds one ring a year, and no amount of urgency changes that. Give your growth the time it needs, and it will repay you.</p>
+
+      <div class="newsletter-block">
+        <div class="newsletter-masthead">
+          <svg width="30" height="30" viewBox="0 0 200 200" role="img" aria-hidden="true">
+            <circle cx="100" cy="100" r="20" fill="none" stroke="#0C2340" stroke-width="9"/>
+            <circle cx="100" cy="100" r="40" fill="none" stroke="#0C2340" stroke-width="9"/>
+            <circle cx="100" cy="100" r="60" fill="none" stroke="#0C2340" stroke-width="9"/>
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#C07C15" stroke-width="9"/>
+          </svg>
+          <span class="newsletter-masthead-text">
+            <span class="newsletter-masthead-name">growth feed</span>
+            <span class="newsletter-masthead-tag">NEWSLETTER</span>
+          </span>
+        </div>
+        <p class="newsletter-desc">Weekly insight on positioning, marketing, sales, and delivery—the four levers that actually grow a business.</p>
+        <form action="https://app.kit.com/forms/9309298/subscriptions" method="post" class="newsletter-form">
+          <input type="email" name="email_address" placeholder="you@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe to Growth Feed</button>
+        </form>
+        <p class="newsletter-proof">✓ Joined by 468 business leaders already.</p>
+        <a href="index.html#contact" class="gold-link">Work with me →</a>
+      </div>
+
+      <p class="post-back"><a href="blog.html" class="gold-link">← Back to the blog</a></p>
+
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Repositioned.business</span>
+  </div>
+</footer>
+
+</body>
+</html>
